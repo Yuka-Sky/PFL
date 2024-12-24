@@ -1,0 +1,3 @@
+parent(jay, X), parent(X, Y). -> Avô para encontrar neto. Indica pai no meio
+parent(Z, X), parent(X, lily). -> Neto para encontrar pai/tio. Indica avô no meio
+parent(X, lily), parent(Y, X). -> Neto para encontrar Avô, indica pai no meio

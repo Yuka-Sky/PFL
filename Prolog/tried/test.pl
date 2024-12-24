@@ -1,0 +1,1 @@
+square_rec(0, ).
