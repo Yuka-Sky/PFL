@@ -1,0 +1,25 @@
+data Inst =
+  Push Integer | Add | Mult | Sub | Tru | Fal | Equ | Le | And | Neg | Fetch String | Store String | Noop | Branch Code Code | Loop Code Code
+  deriving (Show)
+
+*Basic Arithmetic and Boolean Operations:*
+  - `Push Integer`: Pushes a constant integer value onto the stack.
+  - `Add`, `Mult`, `Sub`: Arithmetic operations that add, multiply, and subtract the top two elements of the stack.
+  - `Tru`, `Fal`: Boolean constants representing true and false.
+  - `Equ`: Checks equality between the top two elements of the stack.
+  - `Le`: Checks if the top element is less than or equal to the second element of the stack.
+  - `And`: Performs a logical AND operation on the top two elements of the stack.
+  - `Neg`: Negates the top element of the stack.
+
+*Variable Operations:*
+  - `Fetch String`: Pushes the value bound to the given variable name onto the stack.
+  - `Store String`: Pops the top element of the stack and updates the state, binding the value to the given variable name.
+
+*Control Flow Operations:*
+  - `Noop`: A dummy instruction that doesn't have any effect.
+  - `Branch Code Code`: A conditional branch instruction that changes the flow of control based on the top of the stack.
+  - `Loop Code Code`: A looping construct used to implement while loops.
+
+The `deriving (Show)` part is a derived instance for the `Show` type class, which allows instances of `Inst` to be displayed as strings for debugging and printing purposes.
+
+In your Haskell code, when you see `Inst` being used, it refers to values of this data type, representing the various instructions that the abstract machine can execute. For example, `Push 42` is an instance of `Inst` that represents the instruction to push the constant `42` onto the stack.
